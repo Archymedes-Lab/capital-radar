@@ -1,0 +1,268 @@
+import type { Opportunity } from "@/lib/types";
+
+/**
+ * Curated seed list — NOT live-verified. Programme terms, cheque sizes and
+ * eligibility change often; every entry must be confirmed on its own site
+ * before outreach. `ticket` is approximate and null when unknown.
+ */
+export const opportunities: Opportunity[] = [
+  // ───────────────────────── US ─────────────────────────
+  {
+    id: "yc", name: "Y Combinator", region: "US", country: "United States", kind: "accelerator",
+    stages: ["pre-seed"], sectors: ["generalist", "dev-tools", "ai"], ticket: [500_000, 500_000],
+    access: "open",
+    caveat: "Standard deal is a fixed amount for equity plus an uncapped SAFE; companies typically relocate or work with a US entity (Delaware flip). Check current batch terms.",
+    url: "https://www.ycombinator.com/apply",
+  },
+  {
+    id: "a16z-speedrun", name: "a16z speedrun", region: "US", country: "United States", kind: "accelerator",
+    stages: ["pre-seed"], sectors: ["ai", "dev-tools", "generalist"], ticket: [100_000, 1_000_000],
+    access: "conditional",
+    caveat: "Cohort-based programme; terms and location expectations vary by cohort.",
+    url: "https://speedrun.a16z.com",
+  },
+  {
+    id: "techstars", name: "Techstars", region: "US", country: "United States", kind: "accelerator",
+    stages: ["pre-seed"], sectors: ["generalist", "ai", "security"], ticket: [100_000, 220_000],
+    access: "conditional",
+    caveat: "Many city and vertical programmes with different terms; some are remote-friendly. Confirm programme-specific eligibility.",
+    url: "https://www.techstars.com/accelerators",
+  },
+  {
+    id: "initialized", name: "Initialized Capital", region: "US", country: "United States", kind: "vc",
+    stages: ["pre-seed", "seed"], sectors: ["dev-tools", "ai", "generalist"], ticket: null,
+    access: "conditional",
+    caveat: "Prefers warm intros; US entity usually expected by closing.",
+    url: "https://initialized.com",
+  },
+  {
+    id: "precursor", name: "Precursor Ventures", region: "US", country: "United States", kind: "vc",
+    stages: ["pre-seed"], sectors: ["generalist", "dev-tools"], ticket: [250_000, 1_000_000],
+    access: "conditional",
+    caveat: "Invests at the earliest stage; check fit with founder-led, pre-revenue teams from emerging markets.",
+    url: "https://precursorvc.com",
+  },
+  {
+    id: "boldstart", name: "boldstart ventures", region: "US", country: "United States", kind: "vc",
+    stages: ["pre-seed", "seed"], sectors: ["dev-tools", "security", "ai"], ticket: null,
+    access: "conditional",
+    caveat: "Enterprise and developer-tooling specialist; warm intro strongly preferred.",
+    url: "https://boldstart.vc",
+  },
+  {
+    id: "heavybit", name: "Heavybit", region: "US", country: "United States", kind: "vc",
+    stages: ["pre-seed", "seed"], sectors: ["dev-tools", "open-source", "ai"], ticket: null,
+    access: "conditional",
+    caveat: "Developer-tool focused; programme and fund terms change — confirm what is currently offered.",
+    url: "https://www.heavybit.com",
+  },
+  {
+    id: "mozilla-ventures", name: "Mozilla Ventures", region: "US", country: "United States", kind: "vc",
+    stages: ["pre-seed", "seed"], sectors: ["ai", "open-source", "ai-safety"], ticket: null,
+    access: "conditional",
+    caveat: "Mission-aligned (trustworthy AI, open source); confirm current investment focus and geography.",
+    url: "https://mozilla.vc",
+  },
+  {
+    id: "emergent-ventures", name: "Emergent Ventures", region: "US", country: "United States", kind: "grant",
+    stages: ["grant"], sectors: ["generalist", "ai"], ticket: [1_000, 100_000],
+    access: "open",
+    caveat: "Short application, global applicants welcome; award sizes vary widely and decisions are discretionary.",
+    url: "https://www.mercatus.org/emergent-ventures",
+  },
+  {
+    id: "github-sof", name: "GitHub Secure Open Source Fund", region: "US", country: "United States", kind: "grant",
+    stages: ["grant"], sectors: ["open-source", "security", "dev-tools"], ticket: null,
+    access: "conditional",
+    caveat: "Cohort-based and security-focused; check whether your project meets the criteria and current application window.",
+    url: "https://github.blog/open-source/maintainers/",
+  },
+  {
+    id: "nsf-sbir", name: "NSF SBIR / STTR (America's Seed Fund)", region: "US", country: "United States", kind: "grant",
+    stages: ["grant"], sectors: ["ai", "security", "dev-tools"], ticket: [275_000, 2_000_000],
+    access: "restricted",
+    caveat: "Requires a US-owned, US-based small business. Only viable after forming a US entity with eligible ownership — get legal advice first.",
+    url: "https://seedfund.nsf.gov",
+  },
+  {
+    id: "open-phil-ai", name: "Open Philanthropy / Coefficient Giving — AI safety", region: "US", country: "United States", kind: "grant",
+    stages: ["grant"], sectors: ["ai-safety", "ai"], ticket: null,
+    access: "conditional",
+    caveat: "Focused on technical AI safety research; a commercial dev tool is a stretch. Fits only the research arm (the Lab).",
+    url: "https://www.openphilanthropy.org",
+  },
+  {
+    id: "south-park-commons", name: "South Park Commons", region: "US", country: "United States", kind: "vc",
+    stages: ["pre-seed"], sectors: ["generalist", "ai", "dev-tools"], ticket: null,
+    access: "conditional",
+    caveat: "Founder community plus fund; selective. Confirm the current fellowship structure.",
+    url: "https://www.southparkcommons.com",
+  },
+
+  // ───────────────────────── EU ─────────────────────────
+  {
+    id: "eic-accelerator", name: "EIC Accelerator", region: "EU", country: "European Union", kind: "grant",
+    stages: ["grant", "seed"], sectors: ["ai", "security", "generalist"], ticket: [500_000, 2_500_000],
+    access: "restricted",
+    caveat: "Requires an SME established in an EU member state or Horizon Europe associated country. A company outside those countries is not eligible on its own.",
+    url: "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+  },
+  {
+    id: "nlnet-ngi", name: "NLnet — NGI Zero Commons Fund", region: "EU", country: "Netherlands", kind: "grant",
+    stages: ["grant"], sectors: ["open-source", "security", "dev-tools"], ticket: [5_000, 50_000],
+    access: "open",
+    caveat: "Funds open-source work in the public interest; applications on a rolling call cycle. Sizes are small and milestone-based.",
+    url: "https://nlnet.nl/propose/",
+  },
+  {
+    id: "sovereign-tech", name: "Sovereign Tech Agency", region: "EU", country: "Germany", kind: "grant",
+    stages: ["grant"], sectors: ["open-source", "security"], ticket: null,
+    access: "conditional",
+    caveat: "Invests in foundational open digital infrastructure; a young project may not yet meet the 'critical infrastructure' bar.",
+    url: "https://www.sovereigntechagency.de",
+  },
+  {
+    id: "speedinvest", name: "Speedinvest", region: "EU", country: "Austria", kind: "vc",
+    stages: ["pre-seed", "seed"], sectors: ["dev-tools", "ai", "security"], ticket: null,
+    access: "conditional",
+    caveat: "Pan-European; usually expects an EU-connected entity or strong EU angle.",
+    url: "https://www.speedinvest.com",
+  },
+  {
+    id: "cherry", name: "Cherry Ventures", region: "EU", country: "Germany", kind: "vc",
+    stages: ["pre-seed", "seed"], sectors: ["ai", "dev-tools", "generalist"], ticket: null,
+    access: "conditional",
+    caveat: "Seed-focused in Europe; warm intro advised.",
+    url: "https://www.cherry.vc",
+  },
+  {
+    id: "station-f", name: "Station F — Founders Program", region: "EU", country: "France", kind: "accelerator",
+    stages: ["pre-seed"], sectors: ["generalist", "ai"], ticket: null,
+    access: "conditional",
+    caveat: "Campus-based; check remote participation and current selection criteria.",
+    url: "https://stationf.co/programs/founders",
+  },
+  {
+    id: "antler-eu", name: "Antler (Europe)", region: "EU", country: "Multiple", kind: "accelerator",
+    stages: ["pre-seed"], sectors: ["generalist", "ai"], ticket: [100_000, 250_000],
+    access: "conditional",
+    caveat: "Residency-style programme; typically wants founders on site and may expect team formation.",
+    url: "https://www.antler.co",
+  },
+  {
+    id: "plural", name: "Plural", region: "EU", country: "Europe", kind: "vc",
+    stages: ["seed"], sectors: ["ai", "security", "generalist"], ticket: null,
+    access: "conditional",
+    caveat: "Founder-led European fund; likely later than current traction supports. Keep warm for the seed.",
+    url: "https://www.plural.com",
+  },
+
+  // ───────────────────────── UK ─────────────────────────
+  {
+    id: "seedcamp", name: "Seedcamp", region: "UK", country: "United Kingdom", kind: "vc",
+    stages: ["pre-seed", "seed"], sectors: ["dev-tools", "ai", "generalist"], ticket: [100_000, 1_000_000],
+    access: "open",
+    caveat: "Pan-European pre-seed; takes applications from outside the UK, but check any base-location expectations.",
+    url: "https://seedcamp.com/apply/",
+  },
+  {
+    id: "entrepreneur-first", name: "Entrepreneur First", region: "UK", country: "United Kingdom", kind: "accelerator",
+    stages: ["pre-seed"], sectors: ["ai", "generalist", "dev-tools"], ticket: null,
+    access: "conditional",
+    caveat: "Talent-investor model built around forming teams in a hub city (London and others); relocation expected.",
+    url: "https://www.joinef.com",
+  },
+  {
+    id: "balderton", name: "Balderton Capital", region: "UK", country: "United Kingdom", kind: "vc",
+    stages: ["seed"], sectors: ["ai", "dev-tools", "generalist"], ticket: null,
+    access: "restricted",
+    caveat: "Typically seed and later; too early for a pre-revenue team without a warm intro. Track.",
+    url: "https://www.balderton.com",
+  },
+  {
+    id: "founders-factory", name: "Founders Factory", region: "UK", country: "United Kingdom", kind: "accelerator",
+    stages: ["pre-seed"], sectors: ["ai", "generalist", "security"], ticket: null,
+    access: "conditional",
+    caveat: "Venture-builder/accelerator with corporate partners; confirm current tracks and equity terms.",
+    url: "https://foundersfactory.com",
+  },
+  {
+    id: "innovate-uk", name: "Innovate UK — Smart Grants / Innovation Loans", region: "UK", country: "United Kingdom", kind: "grant",
+    stages: ["grant"], sectors: ["ai", "security", "generalist"], ticket: [25_000, 700_000],
+    access: "restricted",
+    caveat: "Requires a UK-registered business carrying out the work in the UK. Only viable with a UK entity.",
+    url: "https://www.ukri.org/councils/innovate-uk/",
+  },
+  {
+    id: "aisi-alignment", name: "UK AI Security Institute — Alignment Project", region: "UK", country: "United Kingdom", kind: "grant",
+    stages: ["grant"], sectors: ["ai-safety", "ai", "security"], ticket: null,
+    access: "conditional",
+    caveat: "Research funding for alignment/control; the Lab fits better than the commercial products. Confirm open rounds and international eligibility.",
+    url: "https://www.aisi.gov.uk",
+  },
+  {
+    id: "octopus-ventures", name: "Octopus Ventures", region: "UK", country: "United Kingdom", kind: "vc",
+    stages: ["seed"], sectors: ["ai", "generalist"], ticket: null,
+    access: "conditional",
+    caveat: "Seed-stage UK/Europe; lean on introductions. Track for the next round.",
+    url: "https://octopusventures.com",
+  },
+
+  // ───────────────────────── APAC ─────────────────────────
+  {
+    id: "antler-sg", name: "Antler (Singapore / APAC)", region: "APAC", country: "Singapore", kind: "accelerator",
+    stages: ["pre-seed"], sectors: ["generalist", "ai"], ticket: [100_000, 250_000],
+    access: "conditional",
+    caveat: "Residency in a hub city; team formation. Confirm current cohort dates and cheque.",
+    url: "https://www.antler.co",
+  },
+  {
+    id: "peak-xv-surge", name: "Peak XV — Surge", region: "APAC", country: "Singapore / India", kind: "accelerator",
+    stages: ["pre-seed", "seed"], sectors: ["generalist", "ai", "dev-tools"], ticket: [1_000_000, 2_000_000],
+    access: "conditional",
+    caveat: "Focused on South/Southeast Asia founders; check whether non-regional teams qualify.",
+    url: "https://www.peakxv.com/surge/",
+  },
+  {
+    id: "sparklabs", name: "SparkLabs Group", region: "APAC", country: "South Korea / Taiwan / Singapore", kind: "accelerator",
+    stages: ["pre-seed"], sectors: ["generalist", "ai", "security"], ticket: null,
+    access: "conditional",
+    caveat: "Cohort programmes in Seoul and other hubs; confirm current verticals and terms.",
+    url: "https://sparklabsgroup.com",
+  },
+  {
+    id: "coral-capital", name: "Coral Capital", region: "APAC", country: "Japan", kind: "vc",
+    stages: ["pre-seed", "seed"], sectors: ["generalist", "dev-tools", "ai"], ticket: null,
+    access: "conditional",
+    caveat: "Japan-focused early-stage fund that also backs global-facing companies; Japan angle needed.",
+    url: "https://coralcap.co",
+  },
+  {
+    id: "appworks", name: "AppWorks", region: "APAC", country: "Taiwan", kind: "accelerator",
+    stages: ["pre-seed"], sectors: ["generalist", "ai", "dev-tools"], ticket: null,
+    access: "conditional",
+    caveat: "Taiwan-based accelerator with regional reach; confirm eligibility for non-Taiwan teams.",
+    url: "https://appworks.tw",
+  },
+  {
+    id: "startmate", name: "Startmate", region: "APAC", country: "Australia", kind: "accelerator",
+    stages: ["pre-seed"], sectors: ["generalist", "ai", "dev-tools"], ticket: null,
+    access: "conditional",
+    caveat: "Australia/NZ focus; confirm whether remote international founders are accepted.",
+    url: "https://startmate.com",
+  },
+  {
+    id: "blackbird", name: "Blackbird Ventures", region: "APAC", country: "Australia", kind: "vc",
+    stages: ["pre-seed", "seed"], sectors: ["generalist", "ai", "dev-tools"], ticket: null,
+    access: "restricted",
+    caveat: "Australia/NZ focused; weak fit without an ANZ presence. Track only.",
+    url: "https://www.blackbird.vc",
+  },
+  {
+    id: "sosv-hax", name: "SOSV — HAX / Orbit Startups", region: "APAC", country: "Multiple", kind: "accelerator",
+    stages: ["pre-seed"], sectors: ["security", "generalist"], ticket: [100_000, 500_000],
+    access: "conditional",
+    caveat: "Hardware/deep-tech orientation; physical-world work fits better than pure software. Confirm programme list.",
+    url: "https://sosv.com",
+  },
+];
